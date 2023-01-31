@@ -10,6 +10,7 @@ html, body{
     height: 100%;
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
+    color: var(--gray-font);
 }
 
 ul{
@@ -24,17 +25,22 @@ a{
     width: 60%;
 }
 
+.clear{
+    clear: both;
+}
+
 /* ----- VARIABLES ----- */
 :root{
 
     --orange-color: #ff5000;
     --orange-darker: #ca551f;
-    
+    --gray-font: #343a40;
+
 }
 
 /* ----- HEADER ----- */
 header{
-    z-index: 1;
+    z-index: 120;
     position: fixed;
     display: flex;
     align-items: center;
@@ -60,8 +66,7 @@ header .container{
 }
 
 header .logo{
-    margin: 5px 0;
-    height: 85px;
+    height: 90px;
     width: 210px;
     background-color: black;
 }
@@ -73,12 +78,12 @@ nav ul{
 }
 
 nav ul li{
+    padding: 10px 22px;
     background-color: transparent;
-    border-radius: 25px;
-    padding: 10px 25px;
+    border-radius: 24px;
     cursor: pointer;
     transition: 0.4s;
-    color: #ff5000;
+    color: white;
 }
 
 nav ul li.selected{
@@ -94,17 +99,19 @@ nav ul li.unselected:hover{
 /* ----- HOME-BANNER ----- */
 section.home-banner{
     position: relative;
+    display: grid;
+    justify-items: center;
+    height: 100vh;
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.45), 
+            rgba(0, 0, 0, 0.45)), 
+            url(../imagens/code-banner.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
-section.home-banner img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: 0;
-    opacity: 0.8;
-}
+
 
 section.home-banner .container{
     width: 60%;
@@ -115,29 +122,211 @@ section.home-banner .container{
 }
 
 .container .home-text{
-    width: 100%;
-    position: relative;
     display: grid;
+    position: relative;
+    width: 100%;
     justify-items: center;
+    color: white;
 }
 
 .home-text h2{
-    font-weight: bold;
-    font-size: 40px;
+    margin-top: 110px;
+    font-size: 44px;
+    font-weight: 700;
 }
 
 .home-text p{
+    margin-top: 15px;
+    width: 80%;
+    font-weight: 300;
+    font-size: 19px;
     text-align: center;
-    width: 60%;
-    font-size: 20px;
 }
 
 /* ----- SOBRE ----- */
-/* section.sobre{
-
-} */
+section.sobre{
+    display: grid;
+    opacity: 1;
+    width: 100%;
+    height: 37vh;
+    background-color: #343a40;
+    color: white;
+    z-index: 100;
+    justify-items: center;
+    align-items: center;
+}
 
 section.sobre .container {
-    padding-top: 20vh;
+    width: 38%;
     text-align: center;
+}
+
+section.sobre .container h2{
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+section.sobre .container p{
+    margin: 25px 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+/* ----- SERVICOS ----- */
+section.servicos{
+    background-color: white;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+section.servicos .container{
+    display: grid;
+    align-items: center;
+    text-align: center;
+}
+
+.servicos-text{
+    display: grid;
+    justify-items: center;
+
+}
+
+.servicos-text h2{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 42px;
+    margin-top: 70px;
+}
+
+.small-line{
+    margin-top: 7px;
+    width: 70px;
+    height: 2px;
+    background-color: #ff5000;
+}
+
+.servicos-text p{
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.container .cards{
+    position: relative;
+    margin-top: 30px;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.cards .card{
+    float: left;
+    width: 30%;
+    margin: 0 calc(3.3% / 2);
+    padding: 0 12px;
+    overflow: hidden;
+}
+
+.card img{
+    margin-top: 30px;
+    width: 60px;
+    height: 60px;
+    border: 2px solid green;
+    border-radius: 30px;
+}
+
+.card h2{
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.card p{
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 24px;
+
+}
+
+/* ----- SERVICOS ----- */
+section.caracteristicas{
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: white;
+    background-image: url(../imagens/mountain-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+section.caracteristicas .container{
+    display: grid;
+    align-items: center;
+    text-align: center;
+}
+
+.carac-text{
+    display: grid;
+    justify-items: center;
+    color: white;
+}
+
+.carac-text h2{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 42px;
+    margin-top: 75px;
+}
+
+.carac-text p{
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.carac-itens{
+    margin-top: 60px;
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 45px;
+}
+
+.carac-item{
+    width: 50%;
+    display: flex;
+    color: white;
+    margin-bottom: 35px;
+}
+
+.carac-item img{
+    width: 60px;
+    height: 60px;
+    border: 2px solid green;
+    border-radius: 30px;
+}
+
+.item-text{
+    text-align: left;
+    margin: 0 15px;
+}
+
+.item-text h2{
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--orange-color);
+}
+
+.item-text p{
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 26px;
 }
