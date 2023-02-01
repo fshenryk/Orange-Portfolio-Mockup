@@ -4,12 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 html, body{
     height: 100%;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
     color: var(--gray-font);
 }
 
@@ -21,12 +21,44 @@ a{
     text-decoration: none;
 }
 
+/* ----- REUSABLES ----- */
+.clear{
+    clear: both;
+}
+
 .container{
     width: 60%;
 }
 
-.clear{
-    clear: both;
+.small-line{
+    margin-top: 7px;
+    width: 70px;
+    height: 2px;
+    background-color: #ff5000;
+}
+
+section{
+    display: grid;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+/* buttom */
+.buttom{
+    padding: 10px 22px;
+    background-color: var(--orange-color);
+    border-radius: 24px;
+    cursor: pointer;
+    transition: 0.4s;
+    color: white;
+}
+
+.buttom.selected{
+    color: var(--orange-color);
+    background-color: white;
+    border: 1px solid var(--orange-color);
+    font-size: 14px;
 }
 
 /* ----- VARIABLES ----- */
@@ -53,9 +85,9 @@ header.detached{
     position: fixed;
     top: 0;
     left: 0;
-    color: gray;
+    color: var(--gray-font);
     background-color: white;
-    box-shadow: 0px 3px 10px rgb(179, 179, 179);
+    box-shadow: 0px 3px 10px rgb(231, 231, 231);
 }
 
 header .container{
@@ -68,7 +100,7 @@ header .container{
 header .logo{
     height: 90px;
     width: 210px;
-    background-color: black;
+    background-color: var(--orange-color);
 }
 
 /* nav */
@@ -82,8 +114,7 @@ nav ul li{
     background-color: transparent;
     border-radius: 24px;
     cursor: pointer;
-    transition: 0.4s;
-    color: white;
+    transition: color 0.4s;
 }
 
 nav ul li.selected{
@@ -98,9 +129,6 @@ nav ul li.unselected:hover{
 
 /* ----- HOME-BANNER ----- */
 section.home-banner{
-    position: relative;
-    display: grid;
-    justify-items: center;
     height: 100vh;
     background-image: 
         linear-gradient(
@@ -111,19 +139,16 @@ section.home-banner{
     background-repeat: no-repeat;
 }
 
-
-
 section.home-banner .container{
+    display: flex;
     width: 60%;
     height: 80vh;
-    position: relative;
-    display: flex;
     align-items: center;
 }
 
-.container .home-text{
+/* home-text */
+.home-text{
     display: grid;
-    position: relative;
     width: 100%;
     justify-items: center;
     color: white;
@@ -136,8 +161,8 @@ section.home-banner .container{
 }
 
 .home-text p{
-    margin-top: 15px;
     width: 80%;
+    margin-top: 15px;
     font-weight: 300;
     font-size: 19px;
     text-align: center;
@@ -145,15 +170,9 @@ section.home-banner .container{
 
 /* ----- SOBRE ----- */
 section.sobre{
-    display: grid;
-    opacity: 1;
-    width: 100%;
     height: 37vh;
     background-color: #343a40;
     color: white;
-    z-index: 100;
-    justify-items: center;
-    align-items: center;
 }
 
 section.sobre .container {
@@ -163,25 +182,21 @@ section.sobre .container {
 
 section.sobre .container h2{
     font-weight: 700;
-    text-transform: uppercase;
     font-size: 30px;
+    text-transform: uppercase;
 }
 
 section.sobre .container p{
     margin: 25px 0;
-    text-align: center;
     font-weight: 400;
     font-size: 14px;
     line-height: 25px;
+    text-align: center;
 }
 
 /* ----- SERVICOS ----- */
 section.servicos{
     background-color: white;
-    width: 100%;
-    display: grid;
-    justify-items: center;
-    align-items: center;
 }
 
 section.servicos .container{
@@ -190,24 +205,17 @@ section.servicos .container{
     text-align: center;
 }
 
+/* servocos-text */
 .servicos-text{
     display: grid;
     justify-items: center;
-
 }
 
 .servicos-text h2{
-    text-transform: uppercase;
+    margin-top: 70px;
     font-weight: 700;
     font-size: 42px;
-    margin-top: 70px;
-}
-
-.small-line{
-    margin-top: 7px;
-    width: 70px;
-    height: 2px;
-    background-color: #ff5000;
+    text-transform: uppercase;
 }
 
 .servicos-text p{
@@ -215,7 +223,8 @@ section.servicos .container{
     font-size: 14px;
 }
 
-.container .cards{
+/* cards */
+.cards{
     position: relative;
     margin-top: 30px;
     display: inline-block;
@@ -228,14 +237,13 @@ section.servicos .container{
     width: 30%;
     margin: 0 calc(3.3% / 2);
     padding: 0 12px;
-    overflow: hidden;
 }
 
 .card img{
     margin-top: 30px;
     width: 60px;
     height: 60px;
-    border: 2px solid green;
+    border: 2px solid var(--orange-color);
     border-radius: 30px;
 }
 
@@ -256,10 +264,6 @@ section.servicos .container{
 
 /* ----- SERVICOS ----- */
 section.caracteristicas{
-    width: 100%;
-    display: grid;
-    justify-items: center;
-    align-items: center;
     background-color: white;
     background-image: url(../imagens/mountain-bg.jpg);
     background-repeat: no-repeat;
@@ -274,6 +278,7 @@ section.caracteristicas .container{
     text-align: center;
 }
 
+/* carac-text */
 .carac-text{
     display: grid;
     justify-items: center;
@@ -288,7 +293,7 @@ section.caracteristicas .container{
 }
 
 .carac-text p{
-    margin-top: 20px;
+    margin-top: 15px;
     font-size: 14px;
     line-height: 26px;
 }
@@ -297,7 +302,7 @@ section.caracteristicas .container{
     margin-top: 60px;
     display: flex;
     flex-flow: row wrap;
-    margin-bottom: 45px;
+    margin-bottom: 75px;
 }
 
 .carac-item{
@@ -310,13 +315,14 @@ section.caracteristicas .container{
 .carac-item img{
     width: 60px;
     height: 60px;
-    border: 2px solid green;
+    border: 2px solid var(--orange-color);
     border-radius: 30px;
 }
 
+/* item-text */
 .item-text{
     text-align: left;
-    margin: 0 15px;
+    margin: 0 18px;
 }
 
 .item-text h2{
@@ -326,7 +332,271 @@ section.caracteristicas .container{
 }
 
 .item-text p{
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+/* ----- SERVICOS ----- */
+section.portfolio{
+    background-color: white;
+}
+
+section.portifolio .container{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* port-text */
+.port-text{
+    display: grid;
+    margin-top: 75px;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.port-text h2{
+    font-weight: 700;
+    font-size: 42px;
+    text-transform: uppercase;
+}
+
+.port-text p{
     margin-top: 15px;
     font-size: 14px;
     line-height: 26px;
+}
+
+/* .port-nav */
+.port-nav{
+    display: grid;
+    width: 100%;
+    margin-top: 50px;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.port-nav ul{
+    display: flex;
+    font-size: 14px;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.port-nav ul li{
+    margin: 0 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 10px 40px;
+}
+
+.port-nav ul li.unselected:hover{
+    background-color: var(--orange-darker);
+    color: var(--orange-color);
+}
+
+
+/* trabalhos */
+.trabalhos{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 120px;
+}
+
+.thumb{
+    background-color: gray;
+    display: grid;
+    width: 270px;
+    height: 206px;
+    margin: 10px 0;
+    cursor: pointer;
+    align-items: center;
+    justify-items: center;
+    transition: 0.4;
+}
+
+.thumb img{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    border: 1px solid var(--orange-color);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.thumb:hover{
+    background-color: #292f35;
+    transition: 0.4s;
+}
+
+.thumb:hover > img {
+    opacity: 1;
+    transition: 0.4s;
+}
+
+/* ----- CAROUSEL ----- */
+section.carousel{
+    background-color: white;
+}
+
+section.carousel .container{
+    display: grid;
+    width: 60%;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.carousel-itens{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow: scroll;
+    cursor: pointer;
+    scroll-behavior: smooth;
+    
+}
+
+.carousel-item{
+    min-width: 100px;
+    height: 100px;
+    margin: 0 5px;
+    background-color: gray;
+}
+
+/* ----- CONTATO ----- */
+section.contato{
+    background-color: #343a40;
+    color: white;
+}
+
+section.contato .container{
+    margin: 70px 0;
+    display: flex;
+}
+
+.contato-text{
+    width: 50%;
+}
+
+.contato-text h2{
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.contato-text > p{
+    margin-top: 40px;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+/* links */
+.links{
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.links p{
+    margin: 15px 0;
+}
+
+.links a{
+    color: var(--orange-color);
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    transition: 0.4s;
+}
+
+.links p:nth-of-type(3) > a:hover, 
+.links p:nth-of-type(4) > a:hover{
+    background-color: #4867AA;
+    transition: 0.4s;
+}
+
+/* form */
+form{
+    display: grid;
+    width: 50%;
+    justify-items: center;
+}
+
+textarea::placeholder, input::placeholder{
+    color: lightgrey;
+}
+
+form input[type="text"], 
+form input[type="tel"], 
+textarea{
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+    font-weight: normal;
+    border: 1px solid white;
+    color: white;
+    background-color: #343a40;
+    outline: none;
+}
+
+input, textarea{
+    margin-bottom: 15px;
+}
+
+input[type="text"]:focus, 
+input[type="tel"]:focus, 
+textarea:focus{
+    outline: none;
+    border: 1px solid var(--orange-color);
+}
+
+textarea{
+    resize: vertical;
+    min-height: 140px;
+}
+
+input[type="submit"]{
+    width: fit-content;
+    min-height: fit-content;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    padding: 14px 40px;
+    font-size: 13px;
+    transition: 0.4s;
+}
+
+input[type="submit"]:hover{
+    background-color: var(--orange-darker);
+    transition: 0.4s;
+}
+
+
+/* ----- FOOTER ----- */
+footer{
+    width: 100%;
+    text-align: center;
+    padding: 35px 0;
+    color: white;
+    background-color: #292f35;
+    font-size: 14px;
+}
+
+/* ----- BACK-TO-TOP ----- */
+.back-to-top{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    padding: 2px 12px;
+    border-radius: 5px;
+    color: white;
+    background-color: var(--orange-color);
 }
