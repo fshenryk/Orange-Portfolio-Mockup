@@ -21,19 +21,21 @@
             <nav>
 
                 <ul>
-                    <li class="selected">Home</li>
-                    <li class="unselected">Sobre</li>
-                    <li class="unselected">Serviços</li>
-                    <li class="unselected">Características</li>
-                    <li class="unselected">Portfólio</li>
-                    <li class="unselected">Contato</li>
+                    <li class="selected"><a href="#home">Home</a></li><!-- selected -->
+                    <li class="unselected"><a href="#sobre">Sobre</a></li><!-- unselected -->
+                    <li class="unselected"><a href="#servicos">Serviços</a></li><!-- unselected -->
+                    <li class="unselected"><a href="#carac">Características</a></li><!-- unselected -->
+                    <li class="unselected"><a href="#port">Portfólio</a></li><!-- unselected -->
+                    <li class="unselected"><a href="#contato">Contato</a></li><!-- unselected -->
                 </ul>
 
+                
             </nav>
+            <div class="hamburger"><img src="./imagens/icone.jpg"></div><!-- hamburger-->
         </div><!-- container -->
     </header>
 
-    <section class="home-banner">
+    <section class="home-banner" id="home">
         <div class="container">
             <div class="home-text">
                 <h2>Mais de 12 anos de experiência</h2>
@@ -43,21 +45,23 @@
             </div><!-- home-text -->
         </div><!-- container -->
     </section><!-- home-banner -->
-    <section class="sobre">
+    <section class="sobre" id="sobre">
         <div class="container">
+            <div class="sobre-text">
 
-            <h2>Sobre</h2>
-            <p>Somos uma empresa comprometida com o trabalho, cada cliente é 
-                único para nós, por isso desenvolvemos projetos com design 
-                exclusivo e sob medida, somos especialistas em sites, mobile 
-                sites, sistemas web e aplicativos, todos baseados em tecnologia 
-                100% web.<br>
-                Com mais de 12 anos de experiência, somos pioneiros e referência 
-                na região, com capacidade de atender clientes de pequeno, médio 
-                e grande porte.</p>
+                <h2>Sobre</h2>
+                <p>Somos uma empresa comprometida com o trabalho, cada cliente é 
+                    único para nós, por isso desenvolvemos projetos com design 
+                    exclusivo e sob medida, somos especialistas em sites, mobile 
+                    sites, sistemas web e aplicativos, todos baseados em tecnologia 
+                    100% web.<br>
+                    Com mais de 12 anos de experiência, somos pioneiros e referência 
+                    na região, com capacidade de atender clientes de pequeno, médio 
+                    e grande porte.</p>
+            </div><!-- sobre-text -->
         </div><!-- container -->
     </section><!-- sobre -->
-    <section class="servicos">
+    <section class="servicos" id="servicos">
         <div class="container">
             <div class="servicos-text">
                 
@@ -119,15 +123,13 @@
                     <p>Desenvolvimento de site/portal para órgãos públicos com as 
                         diretrizes de acessibilidade e transparência de acordo com 
                         as exigências do TCU.</p> 
-                </div><!-- portais -->
-                
-                <div class="clear"></div><!-- clear -->
+                </div><!-- portais -->                
             </div><!-- cards -->
         </div><!-- container -->
             
     </section><!-- servicos -->
 
-    <section class="caracteristicas">
+    <section class="caracteristicas" id="carac">
         <div class="container">
             
             <div class="carac-text">
@@ -185,7 +187,7 @@
             </div><!-- carac-itens -->
         </div><!-- container -->
     </section><!-- caracteristicas -->
-    <section class="portfolio">
+    <section class="portfolio" id="port">
         <div class="container">
 
             <div class="port-text">
@@ -196,12 +198,12 @@
 
             <div class="port-nav">
                 <ul>
-                    <li class="buttom selected">Todos</li><!-- buttom -->
-                    <li class="buttom unselected">Sites</li><!-- buttom -->
-                    <li class="buttom unselected">Aplicativos</li><!-- buttom -->
-                    <li class="buttom unselected">Sistemas Web</li><!-- buttom -->
-                    <li class="buttom unselected">E-Commerce</li><!-- buttom -->
-                    <li class="buttom unselected">Portais Para Órgãos Publicos</li><!-- buttom -->
+                    <li class="button selected">Todos</li><!-- button -->
+                    <li class="button unselected">Sites</li><!-- button -->
+                    <li class="button unselected">Aplicativos</li><!-- button -->
+                    <li class="button unselected">Sistemas Web</li><!-- button -->
+                    <li class="button unselected">E-Commerce</li><!-- button -->
+                    <li class="button unselected">Portais Para Órgãos Publicos</li><!-- buttom -->
                 </ul>
             </div><!-- port-nav -->
 
@@ -226,7 +228,6 @@
                 <div class="thumb"><img src="./imagens/icone.jpg"></div><!-- thumb -->
                 <div class="thumb"><img src="./imagens/icone.jpg"></div><!-- thumb -->
                 <div class="thumb"><img src="./imagens/icone.jpg"></div><!-- thumb -->
-                
             </div><!-- trabalhos -->
 
         </div><!-- container -->
@@ -261,7 +262,7 @@
 
         </div><!-- container -->
     </section><!-- carousel -->
-    <section class="contato">
+    <section class="contato" id="contato">
         <div class="container">
 
             <div class="contato-text">
@@ -282,12 +283,12 @@
                 <input type="text" name="email" placeholder="E-mail">
                 <input type="tel" name="telefone" placeholder="Telefone">
                 <textarea name="mensagem" placeholder="Mensagem"></textarea>
-                <input type="submit" name="enviar" value="Enviar" class="buttom">
+                <input type="submit" name="enviar" value="Enviar" class="button">
             </form>
         </div><!-- container -->
     </section><!-- contato -->
     <footer>
-        <p>Todos os direitos reservados © 2018 Orange Tecnologia para Internet</p>
+        <p>Todos os direitos reservados © 2018 </p><p> Orange Tecnologia para Internet</p>
     </footer>
     <!-- back-to-top button -->
     <div class="back-to-top">^</div>
