@@ -1,4 +1,4 @@
-/////pageYOffset's
+/////////// NAV BUTTONS ///////////
 var navButtons = document.querySelector('ul:nth-of-type(1)')
 
 window.addEventListener('scroll', () => {
@@ -47,7 +47,7 @@ window.addEventListener('scroll', () => {
         portButton.classList.remove('selected');
         portButton.classList.add('unselected');
     }
-    
+
     if(window.scrollY >= 4364){
         contatoButton.classList.add('selected');
         contatoButton.classList.remove('unselected');
@@ -58,14 +58,12 @@ window.addEventListener('scroll', () => {
 })
 
 
-
 //home = 0
 //sobre = 919
 //servicos = 1304
 //carac = 2190
 //port = 2928
 //contato = 4364
-//
 
 
 /////////// HEADER ///////////
