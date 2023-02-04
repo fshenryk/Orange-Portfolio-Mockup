@@ -6,58 +6,12 @@ window.addEventListener('scroll', () => {
     makeBackToTopVisible()
 }); 
 
-/////////// NAV BUTTONS ///////////
-const navButtons = document.querySelector('ul:nth-of-type(1)')
-
-function navSelectedButton() {
-    if (window.scrollY >= 633){
-        navButtons.firstElementChild.classList.remove('selected');
-        navButtons.firstElementChild.classList.add('unselected');
-    }else{
-        navButtons.firstElementChild.classList.remove('unselected');
-        navButtons.firstElementChild.classList.add('selected');
-    }
-
-    if(window.scrollY >= 633 && window.scrollY < 1304){
-        navButtons.children[1].classList.remove('unselected');
-        navButtons.children[1].classList.add('selected');
-    }else{
-        navButtons.children[1].classList.remove('selected');
-        navButtons.children[1].classList.add('unselected');
-    }
-
-    if(window.scrollY >= 1304 && window.scrollY < 2190){
-        navButtons.children[2].classList.add('selected');
-        navButtons.children[2].classList.remove('unselected');
-    }else{
-        navButtons.children[2].classList.remove('selected');
-        navButtons.children[2].classList.add('unselected');
-    }
-
-    if(window.scrollY >= 2190 && window.scrollY < 2928){
-        navButtons.children[3].classList.add('selected');
-        navButtons.children[3].classList.remove('unselected');
-    }else{
-        navButtons.children[3].classList.remove('selected');
-        navButtons.children[3].classList.add('unselected');
-    }
-
-    if(window.scrollY >= 2928 && window.scrollY < 3792){
-        navButtons.children[4].classList.add('selected');
-        navButtons.children[4].classList.remove('unselected');
-    }else{
-        navButtons.children[4].classList.remove('selected');
-        navButtons.children[4].classList.add('unselected');
-    }
-
-    if(window.scrollY >= 3792){
-        navButtons.lastElementChild.classList.add('selected');
-        navButtons.lastElementChild.classList.remove('unselected');
-    }else{
-        navButtons.lastElementChild.classList.remove('selected');
-        navButtons.lastElementChild.classList.add('unselected');
-    }
-};
+//Onload
+window.onload  = () => {
+    PageScrolled()
+    navSelectedButton()
+    makeBackToTopVisible()
+}
 
 /////////// HEADER ///////////
     const headerElement = document.querySelector('header')
@@ -91,25 +45,86 @@ function navSelectedButton() {
         )
     });
 
+/////////// NAV BUTTONS ///////////
+const navButtons = document.querySelector('ul:nth-of-type(1)')
+
+function navSelectedButton() {
+    if (window.scrollY >= 633){
+        navButtons.firstElementChild.classList.replace('selected', 'unselected');
+    }else{
+        navButtons.firstElementChild.classList.replace('unselected', 'selected');
+    }
+
+    if(window.scrollY >= 633 && window.scrollY < 1304){
+        navButtons.children[1].classList.replace('unselected', 'selected');
+    }else{
+        navButtons.children[1].classList.replace('selected', 'unselected');
+    }
+
+    if(window.scrollY >= 1304 && window.scrollY < 2190){
+        navButtons.children[2].classList.replace('unselected', 'selected');
+    }else{
+        navButtons.children[2].classList.replace('selected', 'unselected');
+    }
+
+    if(window.scrollY >= 2190 && window.scrollY < 2928){
+        navButtons.children[3].classList.replace('unselected', 'selected');
+    }else{
+        navButtons.children[3].classList.replace('selected', 'unselected');
+    }
+
+    if(window.scrollY >= 2928 && window.scrollY < 3792){
+        navButtons.children[4].classList.replace('unselected', 'selected');
+    }else{
+        navButtons.children[4].classList.replace('selected', 'unselected');
+    }
+
+    if(window.scrollY >= 3792){
+        navButtons.lastElementChild.classList.replace('unselected', 'selected');
+    }else{
+        navButtons.lastElementChild.classList.replace('selected', 'unselected');
+    }
+};
+
+
 /////////// PORTFOLIO ///////////
+// port-nav 
+var liButtons = document.querySelectorAll('.port-nav ul li')
+
 document.querySelectorAll('.port-nav ul li').forEach(li => {
-    console.log(li)
     li.addEventListener('click', () => {
-        var selected = document.querySelector('.port-nav ul li.selected')
-        selected = li[0]
         if(li.classList.contains('selected')) {
             return
         }else{
-            li.classList.remove('unselected')
-            li.classList.add('selected')
+            resetUnselected()
+            li.classList.replace('unselected', 'selected')
+            displayed(li)
         }
-        
     })
-})
 
+});
 
+function resetUnselected() {
+    for( index = 0; index < liButtons.length; index++ ) {
+        liButtons[index].classList.replace('selected', 'unselected')
+    }
+}
+
+//change displayed imgs
+const thumbTodos = document.querySelectorAll('.trabalhos .thumb')
+
+function displayed(li){
+    document.querySelectorAll('.trabalhos > div').forEach(div => {
+        if(div.classList.contains(li.classList[1])){
+            div.style.display = "grid";
+        }else{
+            div.style.display = "none"
+        }
+    })
+}
 
 /////////// CAROUSEL SECTION ///////////
+// slider
     const slider = document.querySelector('.carousel-itens');
 
     let isDown = false;

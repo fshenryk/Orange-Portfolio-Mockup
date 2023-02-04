@@ -48,13 +48,14 @@ section{
     cursor: pointer;
     transition: 0.4s;
     color: white;
+    border: 1px solid var(--orange-color);
 }
 
 .button.selected{
     color: var(--orange-color);
     background-color: white;
     border: 1px solid var(--orange-color);
-    font-size: 14px;
+    /* font-size: 14px; */
 }
 
 /* ----- VARIABLES ----- */
@@ -277,18 +278,33 @@ section.servicos .container{
 }
 
 .cards .card{
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     width: 31%;
     margin: 0 calc(2% / 2);
     padding: 0 12px;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    
 }
 
-.card img{
+.card .icone{
+    background-image: url(../imagens/icone.jpg);
+    background-size: 60px 60px;
+    background-position: center;
+    background-repeat: no-repeat;
     margin-top: 30px;
     width: 60px;
     height: 60px;
     border: 2px solid var(--orange-color);
     border-radius: 30px;
+}
+
+.card .icone:hover{
+    background-image: url(../imagens/close.jpg);
 }
 
 .card h2{
@@ -356,11 +372,24 @@ section.caracteristicas .container{
     margin-bottom: 35px;
 }
 
-.carac-item img{
-    width: 60px;
+.carac-item .icone{
+    background-image: url(../imagens/icone.jpg);
+    background-size: 60px 60px;
+    background-position: center;
+    min-width: 60px;
     height: 60px;
     border: 2px solid var(--orange-color);
     border-radius: 30px;
+}
+
+.carac-item .icone:hover{
+    background-image:url(../imagens/close.jpg);
+    background-position: center;
+    background-size: 60px 60px;
+}
+
+.carac-item .icone:hover > img{
+    display: none;
 }
 
 /* item-text */
@@ -441,6 +470,7 @@ section.portifolio .container{
 .port-nav ul li.unselected:hover{
     background-color: var(--orange-darker);
     color: var(--orange-color);
+    border: 1px solid var(--orange-darker);
 }
 
 
@@ -454,15 +484,45 @@ section.portifolio .container{
     justify-content: center;
 }
 
-.thumb{
-    background-color: gray;
+.trabalhos .thumb{
+    background-color: rgb(0, 0, 0);
     display: grid;
-    min-width: calc((100% / 4) - 40px);
+    min-width: calc((100% / 4) - 20px);
     cursor: pointer;
     align-items: center;
     justify-items: center;
     transition: 0.4s;
     margin: 10px;
+}
+
+.thumb.sites{
+    background-color: rgb(50, 50, 50);
+}
+
+.thumb.apps{
+    background-color: rgb(100, 100, 100);
+}
+
+.thumb.sistemas{
+    background-color: rgb(150, 150, 150);
+}
+
+.thumb.ecommerce{
+    background-color: rgb(200, 200, 200);
+}
+
+.thumb.portais{
+    background-color: rgb(220, 220, 220);
+}
+
+.trabalhos .thumb:hover{
+    background-color: #292f35;
+    transition: 0.4s;
+}
+
+.thumb:hover > img {
+    opacity: 1;
+    transition: 0.4s;
 }
 
 .thumb img{
@@ -472,16 +532,6 @@ section.portifolio .container{
     border-radius: 30px;
     border: 1px solid var(--orange-color);
     opacity: 0;
-    transition: 0.4s;
-}
-
-.thumb:hover{
-    background-color: #292f35;
-    transition: 0.4s;
-}
-
-.thumb:hover > img {
-    opacity: 1;
     transition: 0.4s;
 }
 
@@ -652,8 +702,11 @@ footer p{
     padding: 2px 12px;
     border-radius: 5px;
     cursor: pointer;
-    color: white;
     background-color: var(--orange-color);
+}
+
+.back-to-top a{
+    color: white;
 }
 
 .back-to-top.visible{
