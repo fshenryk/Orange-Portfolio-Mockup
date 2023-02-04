@@ -1,7 +1,7 @@
 /////////// EVENT LISTENERS ///////////
 // Scroll
 window.addEventListener('scroll', () => {
-    isPageScrolled()
+    PageScrolled()
     navSelectedButton()
     makeBackToTopVisible()
 }); 
@@ -60,53 +60,92 @@ function navSelectedButton() {
 };
 
 /////////// HEADER ///////////
-const scrollingHeader = document.querySelector('header')
+    const headerElement = document.querySelector('header')
 
-function isPageScrolled() {
-    if (window.scrollY >= 350){
-        scrollingHeader.classList.add('scrolling')
-} else {
-        scrollingHeader.classList.remove('scrolling')
-}};
+    function PageScrolled() {
+        if (window.scrollY >= 200){
+            headerElement.classList.add('scrolling')
+    } else {
+            headerElement.classList.remove('scrolling')
+    }};
+
+    // hamburguer display
+    const hamburgerMenu = document.querySelector('.hamburger')
+
+    hamburgerMenu.addEventListener('click', () => {
+        if(headerElement.classList.contains('mobile')){
+            headerElement.classList.remove('mobile')
+            document.getElementById('menu').src = './imagens/icone.jpg'
+        }else{
+            headerElement.classList.add('mobile')
+            document.getElementById('menu').src = './imagens/close.jpg'
+        }
+    });
+
+    // hamburger options
+    document.querySelectorAll('nav > ul li a').forEach(a => {
+        a.addEventListener('click', () => {
+            headerElement.classList.remove('mobile')
+            document.getElementById('menu').src = './imagens/icone.jpg'
+            }
+        )
+    });
+
+/////////// PORTFOLIO ///////////
+document.querySelectorAll('.port-nav ul li').forEach(li => {
+    console.log(li)
+    li.addEventListener('click', () => {
+        var selected = document.querySelector('.port-nav ul li.selected')
+        selected = li[0]
+        if(li.classList.contains('selected')) {
+            return
+        }else{
+            li.classList.remove('unselected')
+            li.classList.add('selected')
+        }
+        
+    })
+})
+
+
 
 /////////// CAROUSEL SECTION ///////////
-const slider = document.querySelector('.carousel-itens');
+    const slider = document.querySelector('.carousel-itens');
 
-let isDown = false;
-let startX;
-let scrollLeft;
+    let isDown = false;
+    let startX;
+    let scrollLeft;
 
-slider.addEventListener('mousedown', (e) =>{
-    isDown = true;
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-});
+    slider.addEventListener('mousedown', (e) =>{
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
 
-slider.addEventListener('mouseleave', () => {
-    isDown = false;
-});
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
 
-slider.addEventListener('mouseup', () => {
-    isDown = false;
-});
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+    });
 
-slider.addEventListener('mousemove', (e) => {
-    if(!isDown) return; //stop the fn from running
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = x - startX;
-    slider.scrollLeft = scrollLeft - walk;
-});
+    slider.addEventListener('mousemove', (e) => {
+        if(!isDown) return; //stop the fn from running
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = x - startX;
+        slider.scrollLeft = scrollLeft - walk;
+    });
 
 /////////// BACK-TO-TOP BUTTON ///////////
-const backToTopButton = document.querySelector('.back-to-top')
-  
-function makeBackToTopVisible() {
-    console.log( window.pageYOffset)
-   if (window.scrollY >= 300) {
-    backToTopButton.classList.add('visible')
-  } else {
-    backToTopButton.classList.remove('visible')
-    }
-};
+    const backToTopButton = document.querySelector('.back-to-top')
+    
+    function makeBackToTopVisible() {
+    if (window.scrollY >= 300) {
+        backToTopButton.classList.add('visible')
+    } else {
+        backToTopButton.classList.remove('visible')
+        }
+    };
 
