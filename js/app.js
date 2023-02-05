@@ -158,9 +158,9 @@ function displayed(li){
     
     function makeBackToTopVisible() {
     if (window.scrollY >= 300) {
-        backToTopButton.classList.add('visible')
+        backToTopButton.style.display = "block"
     } else {
-        backToTopButton.classList.remove('visible')
-        }
+        backToTopButton.style.display = "none"
+    }
     };
 

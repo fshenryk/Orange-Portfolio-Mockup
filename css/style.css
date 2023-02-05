@@ -58,6 +58,14 @@ section{
     /* font-size: 14px; */
 }
 
+/* icons */
+.material-icons{
+    font-family: 'Material Icons';
+    font-size: 40px;
+    line-height: 70px;
+    color: var(--orange-color);
+}
+
 /* ----- VARIABLES ----- */
 :root{
     --orange-color: #ff5000;
@@ -275,6 +283,7 @@ section.servicos .container{
     max-width: 100%;
     flex-wrap: wrap;
     margin-bottom: 80px;
+    text-align: center;
 }
 
 .cards .card{
@@ -288,23 +297,25 @@ section.servicos .container{
     align-content: center;
     justify-items: center;
     align-items: center;
-    
+}
+
+.card:hover > .material-icons{
+    color: white;
+    background-color: var(--orange-color);
+    border: 1px solid var(--orange-color);
+    transition: 0.4s;
 }
 
 .card .icone{
-    background-image: url(../imagens/icone.jpg);
-    background-size: 60px 60px;
-    background-position: center;
-    background-repeat: no-repeat;
     margin-top: 30px;
-    width: 60px;
-    height: 60px;
-    border: 2px solid var(--orange-color);
-    border-radius: 30px;
-}
-
-.card .icone:hover{
-    background-image: url(../imagens/close.jpg);
+    width: 70px;
+    height: 70px;
+    border: 1px solid #f1f1f1;
+    border-radius: 40px;
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    transition: 0.4s;
 }
 
 .card h2{
@@ -358,6 +369,7 @@ section.caracteristicas .container{
     line-height: 26px;
 }
 
+/* carac-itens */
 .carac-itens{
     margin-top: 60px;
     display: flex;
@@ -370,22 +382,32 @@ section.caracteristicas .container{
     display: flex;
     color: white;
     margin-bottom: 35px;
+    text-align: center;
 }
 
 .carac-item .icone{
-    background-image: url(../imagens/icone.jpg);
-    background-size: 60px 60px;
-    background-position: center;
     min-width: 60px;
     height: 60px;
-    border: 2px solid var(--orange-color);
+    border: 1px solid var(--orange-color);
     border-radius: 30px;
 }
 
-.carac-item .icone:hover{
-    background-image:url(../imagens/close.jpg);
-    background-position: center;
-    background-size: 60px 60px;
+.lnr{
+    font-size: 24px;
+    line-height: 60px;
+    font-family: 'Linearicons-Free';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    color: var(--orange-color);
+    transition: 0.4s;
+}
+
+.carac-item:hover > .icone{
+    color: white;
+    background-color: var(--orange-color);
+    transition: 0.4s;
 }
 
 .carac-item .icone:hover > img{
@@ -515,23 +537,32 @@ section.portifolio .container{
     background-color: rgb(220, 220, 220);
 }
 
+/* thumb icone */
 .trabalhos .thumb:hover{
-    background-color: #292f35;
+    background-color: rgba(0, 0, 0, 0.7);
     transition: 0.4s;
 }
 
-.thumb:hover > img {
+.thumb:hover > .icone {
     opacity: 1;
     transition: 0.4s;
 }
 
-.thumb img{
+.thumb .icone{
     width: 60px;
     height: 60px;
     margin: 50px;
     border-radius: 30px;
     border: 1px solid var(--orange-color);
     opacity: 0;
+    transition: 0.4s;
+    transition: 0.4s;
+    text-align: center;
+}
+
+.thumb .icone:hover{
+    background-color: var(--orange-color);
+    color: white;
     transition: 0.4s;
 }
 
@@ -694,7 +725,7 @@ footer p{
 
 /* ----- BACK-TO-TOP ----- */
 .back-to-top{
-    visibility: hidden;
+    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -703,14 +734,18 @@ footer p{
     border-radius: 5px;
     cursor: pointer;
     background-color: var(--orange-color);
+    transition: 0.8s;
 }
-
+/* animation: name       duration timing-function delay iteration-count direction fill-mode play-state; */
+/* animation: MoveToLeft 800ms     ease             0s            20 */
 .back-to-top a{
     color: white;
 }
 
 .back-to-top.visible{
+    display: block;
     visibility: visible;
+    transition: 0.8s;
 }
 
 
