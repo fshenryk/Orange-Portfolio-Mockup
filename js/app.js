@@ -7,7 +7,7 @@ window.addEventListener('scroll', () => {
 }); 
 
 //Onload
-window.onload  = () => {
+window.onload = () => {
     PageScrolled()
     navSelectedButton()
     makeBackToTopVisible()
@@ -29,10 +29,10 @@ window.onload  = () => {
     hamburgerMenu.addEventListener('click', () => {
         if(headerElement.classList.contains('mobile')){
             headerElement.classList.remove('mobile')
-            document.getElementById('menu').src = './imagens/icone.jpg'
+            document.querySelector('body').style.overflow = "visible"
         }else{
             headerElement.classList.add('mobile')
-            document.getElementById('menu').src = './imagens/close.jpg'
+            document.querySelector('body').style.overflow = "hidden"
         }
     });
 
@@ -40,9 +40,8 @@ window.onload  = () => {
     document.querySelectorAll('nav > ul li a').forEach(a => {
         a.addEventListener('click', () => {
             headerElement.classList.remove('mobile')
-            document.getElementById('menu').src = './imagens/icone.jpg'
-            }
-        )
+            document.querySelector('body').style.overflow = "visible"
+        })
     });
 
 /////////// NAV BUTTONS ///////////
@@ -50,42 +49,49 @@ const navButtons = document.querySelector('ul:nth-of-type(1)')
 
 function navSelectedButton() {
     if (window.scrollY >= 633){
-        navButtons.firstElementChild.classList.replace('selected', 'unselected');
+        changeToUnselected(0);
     }else{
-        navButtons.firstElementChild.classList.replace('unselected', 'selected');
+        changeToSelected(0);
     }
 
     if(window.scrollY >= 633 && window.scrollY < 1304){
-        navButtons.children[1].classList.replace('unselected', 'selected');
+        changeToSelected(1);
     }else{
-        navButtons.children[1].classList.replace('selected', 'unselected');
+        changeToUnselected(1);
     }
 
     if(window.scrollY >= 1304 && window.scrollY < 2190){
-        navButtons.children[2].classList.replace('unselected', 'selected');
+        changeToSelected(2);
     }else{
-        navButtons.children[2].classList.replace('selected', 'unselected');
+        changeToUnselected(2);
     }
 
     if(window.scrollY >= 2190 && window.scrollY < 2928){
-        navButtons.children[3].classList.replace('unselected', 'selected');
+        changeToSelected(3);
     }else{
-        navButtons.children[3].classList.replace('selected', 'unselected');
+        changeToUnselected(3);
     }
 
     if(window.scrollY >= 2928 && window.scrollY < 3792){
-        navButtons.children[4].classList.replace('unselected', 'selected');
+        changeToSelected(4);
     }else{
-        navButtons.children[4].classList.replace('selected', 'unselected');
+        changeToUnselected(4);
     }
 
     if(window.scrollY >= 3792){
-        navButtons.lastElementChild.classList.replace('unselected', 'selected');
+        changeToSelected(5);
     }else{
-        navButtons.lastElementChild.classList.replace('selected', 'unselected');
+        changeToUnselected(5);
     }
 };
 
+function changeToUnselected(index) {
+    navButtons.children[index].classList.replace('selected', 'unselected')
+};
+
+function changeToSelected(index) {
+    navButtons.children[index].classList.replace('unselected', 'selected')
+};
 
 /////////// PORTFOLIO ///////////
 // port-nav 
