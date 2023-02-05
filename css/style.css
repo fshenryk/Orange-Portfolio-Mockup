@@ -533,7 +533,7 @@ section.portifolio .container{
 
 /* thumb icone */
 .trabalhos .thumb:hover{
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
     transition: 0.4s;
 }
 
@@ -577,7 +577,7 @@ section.carousel .container{
     flex-direction: row;
     width: 100%;
     overflow: hidden;
-    scroll-behavior: auto;    
+    scroll-behavior: auto;
 }
 
 .carousel-item{
@@ -720,21 +720,23 @@ footer p{
     display: none;
     bottom: 20px;
     right: 20px;
-    padding: 2px 12px;
     font-size: 24px;
-    border-radius: 5px;
-    background-color: var(--orange-color);
     cursor: pointer;
     transition: 0.8s;
 }
 /* animation: name       duration timing-function delay iteration-count direction fill-mode play-state; */
 /* animation: MoveToLeft 800ms     ease             0s            20 */
 .back-to-top a{
+    display: block;
+    padding: 2px 12px;
+    border-radius: 5px;
     color: white;
+    background-color: var(--orange-color);
+    transition: 0.8s;
 }
 
 .back-to-top.visible{
-    display: block;
+    display: flex;
     visibility: visible;
     transition: 0.8s;
 }
