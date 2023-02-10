@@ -1,17 +1,17 @@
 /////////// EVENT LISTENERS ///////////
-// Scroll
-window.addEventListener('scroll', () => {
-    PageScrolled()
-    navSelectedButton()
-    makeBackToTopVisible()
-}); 
-
 //Onload
 window.onload = () => {
     PageScrolled()
     navSelectedButton()
     makeBackToTopVisible()
 }
+
+// Scroll
+window.addEventListener('scroll', () => {
+    PageScrolled()
+    navSelectedButton()
+    makeBackToTopVisible()
+}); 
 
 /////////// HEADER ///////////
     const headerElement = document.querySelector('header')
@@ -85,12 +85,12 @@ function navSelectedButton() {
     }
 };
 
-function changeToUnselected(index) {
-    navButtons.children[index].classList.replace('selected', 'unselected')
-};
-
 function changeToSelected(index) {
     navButtons.children[index].classList.replace('unselected', 'selected')
+};
+
+function changeToUnselected(index) {
+    navButtons.children[index].classList.replace('selected', 'unselected')
 };
 
 /////////// PORTFOLIO ///////////
@@ -117,14 +117,12 @@ function resetUnselected() {
 }
 
 //change displayed imgs
-const thumbTodos = document.querySelectorAll('.trabalhos .thumb')
-
 function displayed(li){
     document.querySelectorAll('.trabalhos > div').forEach(div => {
         if(div.classList.contains(li.classList[1])){
-            div.style.display = "grid";
+            div.classList.remove('hide')
         }else{
-            div.style.display = "none"
+            div.classList.add('hide')
         }
     })
 }
@@ -164,9 +162,9 @@ function displayed(li){
     
     function makeBackToTopVisible() {
     if (window.scrollY >= 300) {
-        backToTopButton.style.display = "block"
+        backToTopButton.classList.add('visible')
     } else {
-        backToTopButton.style.display = "none"
+        backToTopButton.classList.remove('visible')
     }
     };
 
