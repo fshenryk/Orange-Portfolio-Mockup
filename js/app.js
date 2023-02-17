@@ -48,52 +48,45 @@ hamburgerLinks.forEach(a => {
 });
 
 /////////// NAV BUTTONS ///////////
-const navButtons = document.querySelector('ul:nth-of-type(1)')
+const navLi = document.querySelectorAll('nav ul li')
 
 function navSelectedButton() {
-    if (window.scrollY >= 633){
-        changeToUnselected(0);
-    }else{
+    const Y = window.scrollY;
+
+    if (Y <= 633){
+        unselect();
         changeToSelected(0);
     }
-
-    if(window.scrollY >= 633 && window.scrollY < 1304){
+    if(Y >= 633 && Y < 1304){
+        unselect();
         changeToSelected(1);
-    }else{
-        changeToUnselected(1);
     }
-
-    if(window.scrollY >= 1304 && window.scrollY < 2190){
+    if(Y >= 1304 && Y < 2190){
+        unselect();
         changeToSelected(2);
-    }else{
-        changeToUnselected(2);
     }
-
-    if(window.scrollY >= 2190 && window.scrollY < 2928){
+    if(Y >= 2190 && Y < 2928){
+        unselect();
         changeToSelected(3);
-    }else{
-        changeToUnselected(3);
     }
-
-    if(window.scrollY >= 2928 && window.scrollY < 3792){
+    if(Y >= 2928 && Y < 3792){
+        unselect();
         changeToSelected(4);
-    }else{
-        changeToUnselected(4);
     }
-
-    if(window.scrollY >= 3792){
+    if(Y >= 3792){
+        unselect();
         changeToSelected(5);
-    }else{
-        changeToUnselected(5);
     }
 };
+
+function unselect() {
+    navLi.forEach(li => {
+        li.classList.replace('selected', 'unselected')
+    })
+}
 
 function changeToSelected(index) {
-    navButtons.children[index].classList.replace('unselected', 'selected')
-};
-
-function changeToUnselected(index) {
-    navButtons.children[index].classList.replace('selected', 'unselected')
+    navLi[index].classList.replace('unselected', 'selected')
 };
 
 /////////// PORTFOLIO ///////////
